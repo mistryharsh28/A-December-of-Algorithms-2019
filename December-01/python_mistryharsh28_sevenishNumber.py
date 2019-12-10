@@ -6,11 +6,22 @@
 # So we find the binary number of n and then use the powers of 7 as shown
 # to find the number
 
+
+def binary_number(n):
+
+    if(n == 0):
+        return '0'
+    elif(n == 1):
+        return '1'
+    else: 
+        return binary_number(n//2) + str(n%2)
+        
+
 def sevenishNumber(n):
 
     if(isinstance(n, int) and n > 0):
 
-        binary_n = '{:b}'.format(n)
+        binary_n = binary_number(n)
 
         result = 0
 
@@ -31,3 +42,5 @@ print(result)
 
 result = sevenishNumber(10)
 print(result)
+
+
